@@ -45,11 +45,13 @@ function initCells(numCells, maxX, maxY) {
       pos.y = Math.floor(Math.random() * maxY);
       if(cells[pos.y][pos.x] === 0) {
         cells[pos.y][pos.x] = 1;
+        console.log(`${pos.y}, ${pos.x}`);
         placed = true;
       }
     }
   }
   livingCells += numCells;
+  console.log(cells);
   return cells;
 }
 
@@ -130,10 +132,12 @@ function update(cells) {
       }
 
       // check if this is a dead cell already and has 3 neighbors
+      // it comes back to life is true
       if(cells[y][x] === 0) {
         if(numNeighbors === 3) {
           cells[y][x] = 1;
           livingCells += 1;
+          births += 1;
         } 
         continue;
       } 
@@ -143,6 +147,7 @@ function update(cells) {
         // more than 3 neighbors dies
         cells[y][x] = 0;
         livingCells -= 1;
+        deaths += 1;
       } 
       
     }
@@ -150,14 +155,17 @@ function update(cells) {
 }
 
 function Game() {  
-  const cells = initCells(200, cellsPerRow, cellsPerColumn);
+  const cells = initCells(150, cellsPerRow, cellsPerColumn);
   console.log(cells);    
+
+  draw(cells);
+  updateStatus();
 
   setInterval(() => {
     update(cells);
     draw(cells);
     updateStatus();
     lifeCycles += 1;
-  }, 100);
+  }, 300);
 }
 Game();

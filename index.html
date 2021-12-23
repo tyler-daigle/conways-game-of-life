@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conway's Game Of Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="gol.js" defer></script>
 </head>
+
 <body>
     <h1>Conway's Game Of Life</h1>
     <canvas id="main-canvas" width="400" height="400"></canvas>
-    <span id="life-cycles"></span>
-    <span id="living-cells"></span>
-    <span id="deaths"></span>
-    <span id="births"></span>
+    <div class="status-container">
+        <span id="life-cycles"></span>
+        <span id="living-cells"></span>
+        <span id="deaths"></span>
+        <span id="births"></span>
+    </div>
 
 </body>
+
 </html>

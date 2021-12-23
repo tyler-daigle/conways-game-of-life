@@ -1,4 +1,24 @@
 canvas {
-    border: solid 2px black;
+    border: solid 2px lightseagreen;
     background-color: black;    
+    width: 400px;
+    height: 400px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: lightseagreen;
+}
+
+.status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+    width: 400px;
+    margin-top: 2rem;
 }
